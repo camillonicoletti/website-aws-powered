@@ -1,0 +1,683 @@
+
+
+/* se metto * vuol diure ce tutti gli elementi del codice html avranno queste  caratteristiche */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.navbar {
+    background: #131313;  /* Colore di sfondo della barra di navigazione */
+    height: 80px;  /* Altezza della barra di navigazione */
+    display: flex;  /* Utilizzo del layout flessibile */
+    justify-content: center;  /* Centratura dei contenuti orizzontalmente */
+    align-items: center;  /* Centratura dei contenuti verticalmente */
+    font-size: 1.2rem;  /* Dimensione del carattere, 1.2 rem sono 16px */
+    position: sticky;  /* Imposta la posizione della barra di navigazione come "sticky", il che significa che rimarrà visibile mentre l'utente scorre la pagina, ma si attaccherà al bordo superiore del contenitore quando raggiungerà un certo punto. */
+    top: 0;  /* Posizionamento della barra di navigazione in cima alla pagina */
+    z-index: 999;  /*Specifica il livello di sovrapposizione della barra di navigazione. Un valore alto come 999 assicura che la barra di navigazione sia sovrapposta ad altri elementi nella pagina, a meno che non siano specificati livelli di z-index superiori. */
+}
+
+
+.navbar__container {
+    display: flex;  /* Utilizza il layout flessibile per il contenitore .navbar__container, il che permette di organizzare facilmente gli elementi all'interno del contenitore utilizzando proprietà come justify-content e align-items. */
+    justify-content: space-between;  /* Distribuisce gli elementi uniformemente lungo l'asse principale (orizzontale) */
+    height: 80px;  /* Altezza della barra di navigazione */
+    z-index: 1;  /* Livello di sovrapposizione per gestire lo z-index */
+    width: 100%;  /* Larghezza al 100% del contenitore genitore */
+    max-width: 1300px;  /* Larghezza massima del contenitore */
+    margin: 0 auto;  /* Margini automatici sopra e sotto, margini laterali automatici */
+    /*Il padding è una proprietà CSS che determina lo spazio tra il contenuto di un elemento HTML e il suo bordo. In altre parole, il padding aggiunge spazio all'interno del bordo di un elemento, separando il contenuto dall'esterno. Questo spazio può essere aggiunto su tutti e quattro i lati di un elemento (superiore, destro, inferiore, sinistro) o su lati specifici a seconda delle necessità di design.*/
+    padding: 0 50px;  /* Padding interno (0 sopra e sotto, 50px a sinistra e a destra) */
+
+}
+
+/* metto # perche navbar__logo è un id*/
+#navbar__logo {
+    background-color: #ff8177;  /* Colore di sfondo di fallback nel caso in cui i gradienti non siano supportati */
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);  /* Gradiente lineare che va dal rosso (#ff0844) all'arancione (#ffb199) */
+    background-size: 100%;  /* Dimensione del background al 100% */
+    -webkit-background-clip: text;  /* Clip del background al testo per browser WebKit (Safari, Chrome), confina il background sotto il testo cosi cancellando il colore dle testo esce quiello dello sfondo*/
+    -moz-background-clip: text;  /* Clip del background al testo per browser Mozilla (Firefox) */
+    -webkit-text-fill-color: transparent;  /* cancella il colore del testo e fa vedere quello che ce sotto */
+    -moz-text-fill-color: transparent;  /* Rende il testo trasparente per browser Mozilla */
+    display: flex;  /* Utilizza il layout flessibile per allineare i contenuti */
+    align-items: center;  /* Centra verticalmente gli elementi all'interno del contenitore */
+    cursor: pointer;  /* Cambia l'icona del mouse quando si passa sopra all'elemento */
+    text-decoration: none;  /* Rimuove la sottolineatura del testo */
+    font-size: 2rem;  /* Dimensione del carattere del testo */
+}
+
+
+.fa-gem{
+    margin-right: 0.5rem;
+}
+
+
+.navbar__menu {
+    display: flex;  /* Utilizza il layout flessibile per allineare gli elementi dell'elenco */
+    align-items: center;  /* Centra verticalmente gli elementi dell'elenco */
+    list-style: none;  /* Rimuove i punti elenco predefiniti */
+    text-align: center;  /* Allinea il testo al centro all'interno dell'elemento */
+}
+
+.navbar__item{
+    height: 80px;
+
+}
+
+.navbar__links {
+    color: #fff;  /* Colore del testo bianco */
+    display: flex;  /* Utilizza il layout flessibile per allineare gli elementi */
+    align-items: center;  /* Centra verticalmente gli elementi */
+    justify-content: center;  /* Centra orizzontalmente gli elementi */
+    text-decoration: none;  /* Rimuove la sottolineatura del testo */
+    padding: 0 1rem;  /* Padding interno (0 sopra e sotto, 1 rem a sinistra e destra) */
+    height: 100%;  /* Imposta l'altezza degli elementi .navbar__links al 100% dell'altezza del loro contenitore. Questo assicura che i link occupino l'intera altezza dell'area disponibile all'interno della barra di navigazione. */
+}
+
+
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+
+}
+
+.button {
+    display: flex;  /* Utilizza il layout flessibile per allineare gli elementi */
+    justify-content: center;  /* Centra orizzontalmente il contenuto */
+    align-items: center;  /* Centra verticalmente il contenuto */
+    padding: 10px 20px;  /* Padding interno (10 pixel sopra e sotto, 20 pixel a sinistra e destra) */
+    width: 100%;  /* Larghezza al 100% rispetto al contenitore genitore */
+    height: 100%;  /* Altezza al 100% rispetto al contenitore genitore */
+    text-decoration: none;  /* Rimuove la sottolineatura del testo */
+    border: none;  /* Rimuove il bordo */
+    outline: none;  /* Rimuove l'outline (contorno) */
+    border-radius: 4px;  /* Angoli arrotondati del bordo */
+    background: #f77062;  /* Colore di sfondo */
+    color: #fff;  /* Colore del testo */
+}
+
+
+/*Questa pseudo-classe viene applicata quando il cursore del mouse è sopra l'elemento .button. In questo caso, il cambiamento di stile si verifica quando l'utente "fa hover" sul pulsante.*/
+.button:hover{
+    background: #4837ff;
+    transition: all 0.3s ease;
+
+}
+
+.navbar__links:hover{
+    color: #f77062;
+    transition: all 0.3s ease;
+}
+
+
+
+@media screen and (max-width: 960px) {
+    /* Regole CSS da applicare quando la larghezza dello schermo è 960px o meno */
+
+    .navbar__container {
+        display: flex;  /* Utilizza il layout flessibile per allineare gli elementi */
+        justify-content: space-between;  /* Spazia uniformemente gli elementi lungo la linea principale */
+        height: 80px;  /* Altezza dell'elemento */
+        z-index: 1;  /* Ordine dello z-index per gestire la sovrapposizione */
+        width: 100%;  /* Larghezza dell'elemento */
+        max-width: 1300px;  /* Larghezza massima consentita dell'elemento */
+        padding: 0;  /* Padding interno (0 pixel) */
+    }
+
+ 
+ 
+    /* Puoi aggiungere altre regole CSS qui per adattare il layout e lo stile del contenitore della barra di navigazione a dispositivi con larghezza inferiore a 960px */
+
+
+    .navbar__menu {
+        display: grid;  /* Utilizza il layout grid per organizzare gli elementi */
+        grid-template-columns: auto;  /* Crea una colonna automatica per il contenuto */
+        margin: 0;  /* Rimuove il margine esterno */
+        width: 100%;  /* Larghezza al 100% rispetto al contenitore genitore */
+        position: absolute;  /* Posizionamento assoluto rispetto al contenitore genitore */
+        /*CERCA*/
+        top: -1000px;  /* Posiziona l'elemento 1000 pixel sopra il bordo superiore del contenitore genitore */
+        opacity: 1;  /* Opacità dell'elemento (completamente visibile) */
+        transition: all 0.5s ease;  /* Applica una transizione fluida di 0.5 secondi su tutte le proprietà CSS */
+        height: 50vh;  /* Altezza del 50% rispetto all'altezza visibile dello schermo (viewport height) */
+        z-index: -1;  /* Ordine dello z-index per gestire la sovrapposizione degli elementi */
+        background: #131313;
+    }
+    /*La classe .navbar__menu.active è progettata per modificare lo stile e la posizione dell'elemento .navbar__menu quando è attivato, ad esempio durante l'apertura di un menu a comparsa o di un pannello laterale.*/
+    .navbar__menu.active {
+        background: #131313;  /* Cambia il colore di sfondo quando la classe .active è presente */
+
+        top: 100%;  /* Posiziona l'elemento .navbar__menu alla parte inferiore del suo contenitore genitore */
+        opacity: 1;  /* Mantiene l'opacità dell'elemento al 100% (completamente visibile) */
+        transition: all 0.5s ease;  /* Applica una transizione fluida di 0.5 secondi su tutte le proprietà CSS */
+        z-index: 99;  /* Ordine dello z-index per gestire la sovrapposizione dell'elemento */
+        height: 50vh;  /* Altezza del 50% rispetto all'altezza visibile dello schermo (viewport height) */
+        font-size: 1.6rem;  /* Dimensione del carattere del testo all'interno dell'elemento */
+    }
+
+    #navbar__logo {
+        padding-left: 25px;  /* Aggiunge spaziatura a sinistra per il logo nella barra di navigazione */
+    }
+
+    .navbar__toggle .bar { /* lui è il menu che si preme da mobile in alto a destra*/
+        width: 25px;  /* Imposta la larghezza delle barre del toggle del menu */
+        height: 3px;  /* Imposta l'altezza delle barre del toggle del menu */
+        margin: 5px auto;  /* Margine delle barre del toggle del menu */
+        transition: all 0.3s ease-in-out;  /* Applica una transizione fluida di 0.3 secondi su tutte le proprietà CSS */
+        background: #fff;  /* Colore di sfondo delle barre del toggle del menu */
+    }
+
+    .navbar__item {
+        width: 100%;  /* Imposta la larghezza del singolo elemento nella barra di navigazione */
+    }
+
+    .navbar__links {
+        text-align: center;  /* Allinea il testo al centro all'interno del link della barra di navigazione */
+        padding: 2rem;  /* Aggiunge spaziatura interna al link della barra di navigazione */
+        width: 100%;  /* Imposta la larghezza del link della barra di navigazione */
+        display: table;  /* Usa il layout tabella per il link della barra di navigazione */
+    }
+
+    #mobile-menu {
+        position: absolute;  /* Posizionamento assoluto per il menu mobile */
+        top: 20%;  /* Distanza dal bordo superiore del contenitore genitore */
+        right: 5%;  /* Distanza dal bordo destro del contenitore genitore */
+        transform: translate(5%, 20%);  /* Trasla il menu mobile di 5% a destra e 20% verso il basso */
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;  /* Aggiunge spaziatura interna inferiore per il pulsante nella barra di navigazione */
+    }
+
+    .button {
+        display: flex;  /* Utilizza il layout flessibile per allineare il contenuto del pulsante */
+        justify-content: center;  /* Allinea il contenuto del pulsante al centro orizzontalmente */
+        align-items: center;  /* Allinea il contenuto del pulsante al centro verticalmente */
+        width: 80%;  /* Larghezza del pulsante */
+        height: 80px;  /* Altezza del pulsante */
+        margin: 0;  /* Rimuove il margine esterno del pulsante */
+    }
+
+    .navbar__toggle .bar {
+        display: block;  /* Imposta il display a blocco per le barre del toggle del menu */
+        cursor: pointer;  /* Cambia il cursore del mouse in puntatore */
+    }
+
+    /* Stili per le barre del toggle del menu quando il menu mobile è attivo */
+    #mobile-menu.is-active bar:nth-child(2) {
+        opacity: 0;  /* Nasconde la seconda barra del toggle del menu */
+    }
+    #mobile-menu.is-active bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);  /* Trasforma e ruota la prima barra del toggle del menu */
+    }
+    #mobile-menu.is-active bar:nth-child(3) {
+        transform: translate(-8px) rotate(-45deg);  /* Trasforma e ruota la terza barra del toggle del menu */
+    }
+}
+
+
+
+
+/* Hero Section CSS */
+
+
+.main{
+    background-color: #141414;
+
+}
+
+.main__container {
+    display: grid;  /* Utilizza il layout grid per organizzare gli elementi all'interno del contenitore */
+    grid-template-columns: 1fr 1fr;  /* Crea due colonne uguali all'interno del grid, ciascuna prendendo una frazione della larghezza disponibile */
+    align-items: center;  /* Allinea verticalmente gli elementi al centro del grid */
+    justify-self: center;  /* Allinea orizzontalmente il grid stesso al centro del suo contenitore */
+    margin: 0 auto;  /* Imposta margini superiore e inferiore a 0, e centri orizzontalmente il contenitore */
+    height: 90vh;  /* Imposta l'altezza del contenitore al 90% dell'altezza visibile dello schermo (viewport height) */
+    background-color: #141414;  /* Colore di sfondo del contenitore (c'era un errore di digitazione "O#141414") */
+    z-index: 1;  /* Ordine dello z-index per gestire la sovrapposizione del contenitore */
+    width: 100%;  /* Larghezza del contenitore al 100% rispetto al suo contenitore genitore */
+    max-width: 1300px;  /* Larghezza massima consentita del contenitore */
+    padding: 0 50px;  /* Rimuove il padding interno del contenitore */
+}
+
+
+
+.main__content h1 {
+    font-size: 4rem;  /* Imposta la dimensione del font a 4rem */
+    background-color: #ff8177;  /* Colore di sfondo di fallback nel caso in cui i gradienti non siano supportati */
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);  /* Definisce un gradiente lineare che va dal rosso al rosa */
+    background-size: 100%;  /* Assicura che il gradiente copra l'intero elemento */
+    -webkit-background-clip: text;  /* Utilizza il gradiente solo per il testo (per WebKit) */
+    -moz-background-clip: text;  /* Utilizza il gradiente solo per il testo (per Mozilla) */
+    -webkit-text-fill-color: transparent;  /* Rende il testo trasparente per mostrare il gradiente (per WebKit) */
+    -moz-text-fill-color: transparent;  /* Rende il testo trasparente per mostrare il gradiente (per Mozilla) */
+}
+
+.main__content h2 {
+    font-size: 4rem;  /* Imposta la dimensione del font a 4rem */
+    background-color: #ff8177;  /* Colore di sfondo di fallback nel caso in cui i gradienti non siano supportati */
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);  /* Definisce un gradiente lineare che va dal viola al blu chiaro */
+    background-size: 100%;  /* Assicura che il gradiente copra l'intero elemento */
+    -webkit-background-clip: text;  /* Utilizza il gradiente solo per il testo (per WebKit) */
+    -moz-background-clip: text;  /* Utilizza il gradiente solo per il testo (per Mozilla) */
+    -webkit-text-fill-color: transparent;  /* Rende il testo trasparente per mostrare il gradiente (per WebKit) */
+    -moz-text-fill-color: transparent;  /* Rende il testo trasparente per mostrare il gradiente (per Mozilla) */
+}
+
+.main__content p {
+    margin-top: 1rem;  /* Aggiunge uno spazio di 1rem sopra il paragrafo */
+    font-size: 2rem;  /* Imposta la dimensione del font a 2rem */
+    font-weight: 700;  /* Imposta il peso del font a 700 (grassetto) */
+    color: #fff;
+}
+
+.main__btn {
+    font-size: 1rem;  /* Imposta la dimensione del font a 1rem */
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);  /* Definisce un gradiente lineare che va dall'arancione al rosa */
+    padding: 14px 32px;  /* Aggiunge 14px di padding sopra e sotto, e 32px a sinistra e a destra */
+    border: none;  /* Rimuove i bordi */
+    border-radius: 4px;  /* Arrotonda gli angoli con un raggio di 4px */
+    color: #fff;  /* Imposta il colore del testo a bianco */
+    margin-top: 2rem;  /* Aggiunge uno spazio di 2rem sopra il bottone */
+    cursor: pointer;  /* Cambia il cursore in un puntatore quando si passa sopra il bottone */
+    position: relative;  /* Imposta la posizione come relativa per il posizionamento interno */
+    transition: all 0.35s;  /* Applica una transizione fluida di 0.35 secondi su tutte le proprietà */
+    outline: none;  /* Rimuove il contorno del bottone */
+}
+
+.main__btn a {
+    position: relative;  /* Imposta la posizione come relativa per il posizionamento interno */
+    z-index: 2;  /* Imposta lo z-index a 2 per assicurare che il link sia sopra altri elementi */
+    color: #fff;  /* Imposta il colore del testo a bianco */
+    text-decoration: none;  /* Rimuove la sottolineatura del testo */
+}
+
+.main__btn:after { /*after è quello chhe succede dopo*/
+    position: absolute;  /* Imposta la posizione come assoluta per il posizionamento interno */
+    content: '';  /* Aggiunge un contenuto vuoto */
+    top: 0;  /* Posiziona l'elemento in alto */
+    left: 0;  /* Posiziona l'elemento a sinistra */
+    height: 100%;  /* Imposta l'altezza al 100% del contenitore */
+    background: #4837ff;  /* Imposta il colore di sfondo a blu scuro */
+    transition: all 0.35s;  /* Applica una transizione fluida di 0.35 secondi su tutte le proprietà */
+    border-radius: 4px;  /* Arrotonda gli angoli con un raggio di 4px */
+}
+
+ /*hover se ci vado sopra*/
+ .main__btn:hover {
+    color: #fff;  /* Cambia il colore del testo a bianco quando l'elemento con la classe .main__btn viene passato con il mouse (hover) */
+}
+
+.main__btn:hover:after {
+    width: 100%;  /* Imposta la larghezza del pseudo-elemento :after al 100% del contenitore quando l'elemento con la classe .main__btn viene passato con il mouse (hover) */
+}
+
+    .main__img-container{
+        text-align: center;
+    }
+
+    #main_img{
+        height: 80%;
+        width: 80%;
+
+    }
+
+/*NON FUNZIONA BENISSIMO*/
+/*For mobile*/
+@media screen and (max-width: 960px) {
+    /* Regole CSS per schermi con larghezza massima di 768px */
+
+    .main__container {
+        display: grid;  /* Utilizza il layout a griglia per organizzare gli elementi */
+        grid-template-columns: 100%;  /* Una sola colonna automatica per il contenuto */
+        align-items: center;  /* Allinea gli elementi al centro verticalmente */
+        justify-self: center;  /* Allinea il contenitore al centro orizzontalmente */
+        width: 100%;/* Imposta la larghezza del contenitore al 100% */
+        margin: 0 auto;  /* Centra il contenitore orizzontalmente con margini automatici */
+        height: 150vh;  /* Imposta l'altezza del contenitore al 90% dell'altezza del viewport */
+    }
+
+    .main__content {
+        text-align: center;  /* Allinea il testo al centro */
+        margin-bottom: 4rem;  /* Aggiunge un margine inferiore di 4rem */
+    }  
+
+    .main__content h1 {
+        font-size: 2.5rem;  /* Imposta la dimensione del font a 2.5rem */
+        margin-top: 2rem;  /* Aggiunge un margine superiore di 2rem */
+    }
+
+    .main__content h2 {
+        font-size: 3rem;  /* Imposta la dimensione del font a 3rem */
+    }
+
+    .main__content p { 
+        margin-top: 1rem;  /* Aggiunge un margine superiore di 1rem */
+        font-size: 1.5rem;  /* Imposta la dimensione del font a 1.5rem */
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    /* Regole CSS per schermi con larghezza massima di 480px */
+
+    .main__content h1 {
+        font-size: 2rem;  /* Imposta la dimensione del font a 2rem */
+        margin-top: 3rem;  /* Aggiunge un margine superiore di 3rem */
+    }
+
+    .main__content h2 {
+        font-size: 2rem;  /* Imposta la dimensione del font a 2rem */
+    }
+
+    .main__content p {
+        margin-top: 2rem;  /* Aggiunge un margine superiore di 2rem */
+        font-size: 1.5rem;  /* Imposta la dimensione del font a 1.5rem */
+    }
+
+    .main__btn {
+        padding: 12px 36px;  /* Aggiunge un padding di 12px in alto/in basso e 36px a destra/sinistra */
+        margin: 2.5rem 0;  /* Aggiunge un margine di 2.5rem sopra e sotto il bottone */
+    }
+}
+
+
+/* SERVICE CSS SECTION*/
+
+.service{
+    background: #141414;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.service h1{
+    background-color: #ff8177;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #ff9185 53%, #cf556c 78%, #b12a5b 100%);
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;  /* Utilizza il gradiente solo per il testo (per WebKit) */ /*toglie il gradiente come contorno*/
+    -moz-background-clip: text;  /* Utilizza il gradiente solo per il testo (per Mozilla) */
+    -webkit-text-fill-color: transparent;  /* Rende il testo trasparente per mostrare il gradiente (per WebKit) */
+    -moz-text-fill-color: transparent;  /* Rende il testo trasparente per mostrare il gradiente (per Mozilla) */
+}
+
+.service__container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Fa sì che gli elementi flessibili vadano a capo su una nuova riga se non c'è spazio sufficiente nella riga corrente. Gli elementi successivi si dispongono su nuove righe, mantenendo lo stesso ordine.*/
+
+}
+
+
+
+.service__card {
+    /* Margine esterno di 1 rem su tutti i lati */
+    margin: 1rem;
+
+    /* Altezza fissa di 525 pixel */
+    height: 525px;
+
+    /* Larghezza fissa di 400 pixel */
+    width: 400px;
+
+    /* Arrotondamento degli angoli con un raggio di 4 pixel */
+    border-radius: 4px;
+
+    /* Immagine di sfondo con una sovrapposizione gradiente */
+    /* La sovrapposizione gradiente va da trasparente (0%) a semi-trasparente nero (60%) */
+    /* L'immagine di sfondo è '/pic3.jpg' */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url(/pic3.jpg);
+
+    /* L'immagine di sfondo copre l'intera area del contenitore */
+    background-size: cover;
+
+    /* Posizionamento relativo per poter posizionare elementi figli assolutamente all'interno di questo contenitore */
+    position: relative;
+
+    /* Colore del testo bianco */
+    color: #fff;
+}
+
+
+.service__card:nth-child(2){ 
+    /* Selettore che applica stili specifici al secondo elemento figlio di tipo .service__card all'interno del suo contenitore */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17, 17, 17, 0.6) 100%), url(/pic2.jpg);
+
+}
+
+.service h2{
+    position:absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.service__card p {
+    position:absolute;
+    top: 400px;
+    left: 30px;
+}
+
+
+.service__card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f77062;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer; /*fa uscire il mouse diverso sul tasto*/
+}
+
+.service__card:hover{
+    transform: scale(1.075); /*fa zoomare l'immagine*/
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+
+@media screen and (max-widht: 960px){
+    .service{
+        height:1600px;
+    }
+    .service h1{
+        font-size: 2rem;
+        margin-top: 12rem;
+    }
+}
+
+@media screen and (max-widht: 480px){
+    .service{
+        height:1400px;
+    }
+    .service h1{
+        font-size: 1.2rem;
+    }
+
+    .service__card{
+        width: 300px;
+
+    }
+}
+
+
+/* Footer CSS */
+
+/* Contenitore principale del footer */
+.footer__container {
+    background-color: #141414; /* Colore di sfondo del footer */
+    padding: 3rem 0; /* Padding sopra e sotto di 5 rem */
+    display: flex; /* Utilizza il layout flexbox per organizzare gli elementi */
+    flex-direction: column; /* Organizza gli elementi in colonna */
+    justify-content: center; /* Centra verticalmente gli elementi all'interno del footer */
+    align-items: center; /* Centra orizzontalmente gli elementi all'interno del footer */
+}
+
+/* Logo del footer diamante*/
+#footer__logo {
+    color: #fff; /* Colore del testo bianco */
+    display: flex; /* Utilizza il layout flexbox */
+    align-items: left; /* Centra verticalmente gli elementi all'interno del logo */
+    cursor: pointer; /* Mostra il cursore come puntatore */
+    text-decoration: none; /* Rimuove il sottolineato dal testo */
+    font-size: 2rem; /* Dimensione del carattere 2 rem */
+}
+
+/* Links nel footer */
+.footer__links {
+    width: 100%; /* Larghezza del 100% */
+    max-width: 1000px; /* Larghezza massima di 1000px */
+    display: flex; /* Utilizza il layout flexbox */
+    justify-content: center; /* Centra orizzontalmente gli elementi */
+}
+
+/* Wrapper per i link nel footer */
+.footer__link--wrapper {
+    display: flex; /* Utilizza il layout flexbox */
+}
+
+/* Singoli elementi di link nel footer */
+.footer__link--items {
+    display: flex; /* Utilizza il layout flexbox */
+    flex-direction: column; /* Organizza gli elementi in colonna */
+    align-items: flex-start; /* Allinea gli elementi a sinistra */
+    margin-left: 50px; /* Margine esterno di 16px */
+    margin-bottom: 4rem;
+    text-align: left; /* Allinea il testo a sinistra */
+    width: 200px; /* Larghezza di 160px */
+    box-sizing: border-box; /* Il padding e il bordo sono inclusi nella larghezza e nell'altezza */
+}
+
+/* Titolo h2 all'interno degli elementi di link nel footer */
+.footer__link--items h2 {
+    margin-bottom: 16px; /* Margine inferiore di 16px */
+}
+
+/* Stile per il titolo h2 all'interno degli elementi di link nel footer */
+.footer__link--items > h2 {
+    color: #fff; /* Colore del testo bianco */
+}
+
+/* Stili per i link all'interno degli elementi di link nel footer */
+.footer__link--items a {
+    color: #fff; /* Colore del testo bianco */
+    text-decoration: none; /* Rimuove il sottolineato dal testo */
+    margin-bottom: 0.5rem; /* Margine inferiore di 0.5rem */
+}
+
+/* Stili per i link al passaggio del mouse */
+.footer__link--items a:hover {
+    color: rgba(238, 153, 153, 0.6); /* Cambia il colore del testo a grigio chiaro */
+    transition: 0.3s ease-out; /* Effetto di transizione del colore */
+}
+
+
+
+
+
+
+
+
+/* Icone social */
+.social__icons--link {
+    color: #fff; /* Colore del testo bianco */
+    padding: 10px;
+    font-size: 30px; /* Dimensione del carattere 24px */
+}
+
+/* Contenitore per i media sociali */
+.social__media {
+    max-width: 1000px; /* Larghezza massima di 1000px */
+    width: 100%; /* Larghezza del 100% */
+}
+
+/* Wrapper per i media sociali */
+
+.social__media--wrap {
+    display: flex; /* Utilizza il layout flexbox */
+    justify-content: space-between; /* Distribuisce uniformemente gli elementi */
+    align-items: left; /* Centra verticalmente gli elementi */
+    width: 70%; /* Larghezza del 90% */
+    max-width: 1000px; /* Larghezza massima di 1000px */
+    margin-right: 50px;
+    
+}
+
+
+/* Icone social */
+.social__icons {
+    display: flex; /* Utilizza il layout flexbox */
+    justify-content: space-between; /* Distribuisce uniformemente gli elementi */
+    align-items: right; /* Centra verticalmente gli elementi */
+    width: 120px; /* Larghezza di 240px */
+}
+
+/* Logo del sito web nel footer */
+.social__logo {
+    color: #fff; /* Colore del testo bianco */
+    justify-self: start; /* Allinea a sinistra rispetto al contenitore genitore */
+    margin-left: 20px; /* Margine sinistro di 20px */
+    cursor: pointer; /* Mostra il cursore come puntatore */
+    text-decoration: none; /* Rimuove il sottolineato dal testo */
+    font-size: 2rem; /* Dimensione del carattere 2 rem */
+    display: flex; /* Utilizza il layout flexbox */
+    align-items: center; /* Centra verticalmente gli elementi */
+    margin-bottom: 16px; /* Margine inferiore di 16px */
+}
+
+
+
+/* Testo dei diritti del sito web */
+.website__rights {
+    margin-top:1rem;
+    color: #fff; /* Colore del testo bianco */
+}
+
+/* Media query per schermi con larghezza massima di 820px */
+@media screen and (max-width: 820px) {
+    .footer__links {
+        padding-top: 2rem; /* Padding sopra di 2 rem */
+    }
+
+    #footer__logo {
+        margin-bottom: 2rem; /* Margine inferiore di 2 rem */
+    }
+
+    .website__rights {
+        margin-bottom: 2rem; /* Margine inferiore di 2 rem */
+    }
+
+    .footer__link--wrapper {
+        flex-direction: column; /* Organizza gli elementi in colonna */
+    }
+
+    .social__media--wrap {
+        flex-direction: column; /* Organizza gli elementi in colonna */
+    }
+}
+
+/* Media query per schermi con larghezza massima di 480px */
+@media screen and (max-width: 480px) {
+    .footer__link--items {
+        margin: 0; /* Rimuove il margine esterno */
+        padding: 10px; /* Padding di 10px */
+        width: 100%; /* Larghezza del 100% */
+    }
+}
+
+
+

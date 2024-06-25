@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXT Website</title>
+    <!-- With command link i link to this file a css file and href is the percorao whhere is my css fyle-->
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhONPvSL5KYnix@BT.¢BOOEEaLpro+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kumbh+Sans:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVBAR SECTION-->
+
+    <!-- <nav>: Questo è un elemento HTML5 semantico che rappresenta una sezione del sito destinata alla navigazione. Può contenere link a diverse parti della pagina o ad altre pagine del sito.
+    class="navbar": Questo attribuisce una classe chiamata navbar all'elemento <nav>. Le classi sono utilizzate per applicare stili CSS specifici o per selezionare elementi tramite JavaScript.-->
+    <nav class="navbar">
+        <!-- div è un contenitorw generico-->
+         <!-- navbar_container si usa per organizzare meglio gli elementi nella bar di menu-->
+        <div class="navbar__container">
+             <!-- a#navbar__logo (+tab)-->
+             <!-- la <a> serve per crere collegamenti ipertestuali--> <!--i.fas.fa-gem per il simbolo della gemma-->
+            <a href="/" id="navbar__logo"><i class="fas fa-gem"></i>NEXT</a>
+            <!-- .navbar__toggle#mobile-menu--> <!-- per creare un pulsante o un menu che si apre e si chiude-->
+             <div class="navbar__toggle" id="mobile-menu">
+                <!--span.bar--> <!-- span si usa solo per manipolare con css un elemento, bar invece dice chhe tutti gli elementi di classe bar dello span saranno modificati in un certo modo-->
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+             </div>
+             <!--ul.navbar__menu--> <!-- ul è un elenco non ordinato che fara parte in questo caso di una barra di menu-->
+             <ul class="navbar__menu">
+                <!--li.navbar__item--> <!-- <li> rapprenseta un elemento dell'elenco non ordinato -->
+                <li class="navbar__item">
+                    <!--a.navbar__links-->
+                    <a href="/first-project-hgtml-css-js/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__items">
+                    <!-- /tech.html mi crea una altra pagina html dentro quella principale-->
+                    <a href="/first-project-hgtml-css-js/tech.html" class="navbar__links">Tech</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/first-project-hgtml-css-js/members.html" class="navbar__links">Members</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/" class="button">Sign Up</a>
+                </li>
+             </ul>
+        </div>
+    </nav>
+
+    <!--HERO SECTION-->
+    <!-- .main-->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>THIS IS AWS</h1>
+                <h2>CLOUD COMPUTING</h2>
+                <p>See what makes us different.</p>
+                <!-- button.main__btn-->
+                <button class="main__btn"><a href="/">Get Started</a></button>
+            </div>
+            <!-- Come mettere un immagine-->
+           <div class="main__img--container">
+            <!-- img#main__img-->
+            <img src="/pic4.svg" alt="pic" id="main__img">
+           </div> 
+        </div>
+    </div>
+
+
+
+    <!-- Service Section -->
+     <div class="service">
+        <h1>See what the hype is abaout</h1>
+        <div class="service__container">
+            <div class="service__card">
+                <h2>Experience bliss</h2>
+                <p>AI Powered Technology</p>
+                <button>Get Sterted</button>
+            </div>
+            <div class="service__card">
+                <h2>Are you Ready?</h2>
+                <p>Take the leap</p>
+                <button>Get Sterted</button>
+            </div>
+        </div>
+     </div>
+
+     <!-- Footer Section -->
+     <div class="footer__container">
+        <div class="footer__links">
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>About Us</h2>
+              <a href="/sign__up">How it works</a> <a href="/">Testimonials</a>
+              <a href="/">Careers</a> <a href="/">Investments</a>
+              <a href="/">Terms of Service</a>
+            </div>
+            <div class="footer__link--items">
+              <h2>Contact Us</h2>
+              <a href="/">Contact</a> <a href="/">Support</a>
+              <a href="/">Destinations</a> <a href="/">Sponsorships</a>
+            </div>
+          </div>
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>Videos</h2>
+              <a href="/">Submit Video</a> <a href="/">Ambassadors</a>
+              <a href="/">Agency</a> <a href="/">Influencer</a>
+            </div>
+            <div class="footer__link--items">
+              <h2>Social Media</h2>
+              <a href="/">Instagram</a> <a href="/">Facebook</a>
+              <a href="/">Youtube</a> <a href="/">Twitter</a>
+            </div>
+          </div>
+          <section class="social__media">
+                   
+        </section>
+        </div>
+        
+        
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fas fa-gem"></i>NEXT</a>        
+                </div>
+                <p class="website__rights">© NEXT 2024. All right reserved</p>
+                <div class="social__icons">
+                    <a href="/" class="social__icons--link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="/" class="social__icons--link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="/" class="social__icons--link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="/" class="social__icons--link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="/" class="social__icons--link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>               
+           
+
+    </div>
+    
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
