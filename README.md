@@ -1,4 +1,3 @@
-```md
 # AWS Powered Website
 
 A static website project with a simple frontend and AWS Lambda backend functions.
