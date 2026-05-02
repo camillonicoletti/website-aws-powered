@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+
+# Editor and IDE files
+.vscode/
+.idea/
+
+# Node dependencies, if added later
+node_modules/
+
+# Build/dist output, if added later
+dist/
+build/
+
+# AWS local/cache files
+.aws-sam/
+.serverless/
